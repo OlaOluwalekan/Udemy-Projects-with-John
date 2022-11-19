@@ -1,0 +1,115 @@
+/* GLOBAL STYLES */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainWhite: #fff;
+  --mainBlack: #242424;
+  --shadowBlack: #a3a3a3;
+  --greyBlue: #019cda;
+}
+/* END OF GLOBAL STYLES */
+
+/* HEADER STYLES */
+header {
+  width: 100vw;
+  height: 50px;
+  background-color: var(--mainWhite);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 10px;
+  font-size: 15px;
+  box-shadow: 0 3px 5px var(--shadowBlack);
+}
+
+.site-name {
+  color: var(--greyBlue);
+}
+
+.navbar {
+  width: 30%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--mainBlack);
+  font-weight: 700;
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    padding: 0 20%;
+  }
+}
+/* END OF HEADER STYLES */
+
+/* MAIN CONTENT STYLES */
+.container {
+  width: 100vw;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.colour-code {
+  width: 80%;
+  max-width: 700px;
+  background-color: var(--mainBlack);
+  color: var(--mainWhite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.colour-code span {
+  color: var(--greyBlue);
+  margin-left: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn {
+  background: none;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.tool-tips {
+  padding: 5px 10px;
+  background-color: red;
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  border-radius: 5px;
+  width: fit-content;
+  opacity: 0.2;
+}
+
+@media screen and (min-width: 600px) {
+  .colour-code {
+    font-size: 35px;
+  }
+}
+/* END OF MAIN CONTENT STYLES */

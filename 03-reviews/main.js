@@ -33,5 +33,14 @@ backBtn.onclick = () => {
     pos = 75;
   }
   reviews.style.transform = `translateX(-${pos}%)`;
-  console.log(pos);
+};
+
+surpriseBtn.onclick = () => {
+  pos = GenerateRandom();
+  reviews.style.transform = `translateX(-${pos}%)`;
+};
+
+const GenerateRandom = () => {
+  let randomNo = Math.floor(Math.random() * 4) * 25;
+  return randomNo;
 };

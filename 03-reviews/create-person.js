@@ -2,6 +2,7 @@ const reviewsContainer = document.querySelector(".reviews");
 const nextBtn = document.querySelector(".front");
 const backBtn = document.querySelector(".back");
 const reviews = document.querySelector(".reviews");
+const surpriseBtn = document.querySelector(".surprise");
 
 const CreatePersonCard = (name, pos, des, img) => {
   const reviewCard = document.createElement("div");

@@ -13,6 +13,9 @@ This projects is a list of projects done during my tutorial on JavaScript with _
    - [The JavaScript](#the-javascript-1)
    - [The Challenges](#the-challenges-1)
 1. [Reviews](#reviews)
+   - [How is this project created](#how-is-this-project-created-2)
+   - [The javaScript](#the-javascript-2)
+   - [The Challenges](#the-challenges-2)
 
 ## Colour Flipper
 
@@ -112,3 +115,50 @@ depending on the button clicked. Also, if the counter is below zero, it has a re
 No challenge faced here
 
 ## Reviews
+
+This project is about creating a review page with buttons to view next or previous reviews and also tro generate random reviews
+
+![Reviews Project Screenshot](./readme-images/reviews.PNG)
+
+### How is this Project Created
+
+This project is a single page website. It makes use of HTML, CSS and JavaScript. The HTML is simple with just a `<h1>` heading. It also contains `<article>` and `<div>` tags that holds the [fontawesome icons](https://fontawesome.com/icons/) (`<i>` tags) and `<button>` tags that are responsible for changing the reviews sequentially and randomly.
+
+### The JavaScript
+
+The bulk of the work is done with the Javascript. Essentially, all the reviews elements were added dynamically with JavaScript which is divided into 3 files. One handles all the data neded for the review.
+
+```js
+// persons.js
+const persons = [
+  {
+    name: "bill anderson",
+    position: "the boss",
+    image: "./images/bill-anderson.jpg",
+    description:
+      "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic.",
+  }, ...
+];
+```
+
+Then another JavaScript file creates the dynamic HTML elements that hold all the reviews information or data which is then appended to (using ` element.appendChild(child)`) an existing `<section>` tag on the HTML page.
+
+The third script handles the click events that changes the reviews sequentially and randomly. This is done by using the CSS `transform: transitionX` property to change the displayed reviews.
+
+```js
+let pos = 0;
+
+nextBtn.onclick = () => {
+  if (pos < 75) {
+    pos += 25;
+  } else {
+    pos = 0;
+  }
+  reviews.style.transform = `translateX(-${pos}%)`;
+  console.log(pos);
+};
+```
+
+### The Challenges
+
+The little challenge I have hear is changing the review when a button is clicked and starting all over when it reaches the last review. I was able to implement this by using a pos variable which is initially set to zero (`let pos = 0`). Then whenever the next button is clicked it changes pos to multiples of 25 upto 75 which the translates the reviews in the x direction. When `pos = 75`, I then set `pos = 0` so that it can start allover.

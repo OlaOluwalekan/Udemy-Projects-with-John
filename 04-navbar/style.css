@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainBlack: #2c2c2c;
+  --lightBlack: #868686;
+  --mainBlue: #5674fa;
+  --lightBlue: #95a7f8;
+  --lightGreyishBlue: #d3daec;
+  --mainWhite: #fff;
+}
+
+body {
+  background-color: var(--lightGreyishBlue);
+}
+
+header {
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mainWhite);
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 3px 10px var(--lightBlack);
+  overflow-y: hidden;
+  transition: all 500ms ease;
+}
+
+.open-menu {
+  height: 219px;
+}
+
+.title-bars {
+  padding: 10px 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  /* background-color: green; */
+}
+
+.title-bars h1 {
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-shadow: 0 3px 3px var(--lightBlack);
+  font-size: 25px;
+}
+
+.title-bars h1 span {
+  color: var(--mainBlue);
+}
+
+.menu-bar {
+  font-size: 25px;
+  color: var(--mainBlue);
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+
+.menu-bar:hover {
+  transform: rotate(90deg);
+  color: black;
+}
+
+.links {
+  margin: 10px 0;
+}
+
+.link {
+  list-style-type: none;
+  line-height: 35px;
+}
+
+.link a:hover {
+  color: var(--mainBlue);
+  background-color: var(--lightBlue);
+  padding-left: 25px;
+}
+
+.links li a {
+  padding: 0 15px;
+  text-decoration: none;
+  color: var(--mainBlack);
+  display: block;
+  transition: all 500ms ease;
+}
+
+.socials {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  header {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+  }
+
+  .title-bars {
+    width: 30%;
+    /* background-color: green; */
+    margin: 0 2%;
+  }
+
+  .menu-bar {
+    display: none;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    /* background-color: red; */
+    margin: 0 2%;
+  }
+
+  .link a:hover {
+    padding: 0 15px;
+    background: none;
+  }
+
+  .socials {
+    display: flex;
+    /* background-color: gold; */
+    margin: 0 2%;
+  }
+
+  .socials a {
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 7px;
+    color: var(--mainBlue);
+  }
+}

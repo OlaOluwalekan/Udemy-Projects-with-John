@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainBlack: #2c2c2c;
+  --lightBlack: #868686;
+  --mainBlue: #5674fa;
+  --lightBlue: #95a7f8;
+  --lightGreyishBlue: #d3daec;
+  --mainWhite: #fff;
+}
+
+body {
+  background-color: var(--lightGreyishBlue);
+}
+
+header {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  color: var(--mainBlue);
+  animation: pulse 3s ease infinite;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: var(--mainWhite);
+  box-shadow: 1px 0 15px var(--lightBlack);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  left: -500px;
+  transition: all 0.5s ease;
+}
+
+.open-side-bar {
+  left: 0;
+}
+
+.nav-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-head h1 {
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-shadow: 0 3px 3px var(--lightBlack);
+  font-size: 25px;
+}
+
+.nav-head h1 span {
+  color: var(--mainBlue);
+}
+
+.close-nav {
+  font-size: 30px;
+  color: brown;
+  cursor: pointer;
+  transition: all ease 1s;
+}
+
+.close-nav:hover {
+  transform: rotate(540deg);
+  color: palevioletred;
+}
+
+.links {
+  margin: 10px 0;
+  height: 80vh;
+  /* background-color: green; */
+}
+
+.link {
+  list-style-type: none;
+  line-height: 65px;
+}
+
+.link a:hover {
+  color: var(--mainBlue);
+  background-color: var(--lightBlue);
+  padding-left: 25px;
+}
+
+.links li a {
+  padding: 0 15px;
+  text-decoration: none;
+  color: var(--lightBlue);
+  font-weight: 500;
+  font-size: 25px;
+  display: block;
+  transition: all 500ms ease;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: gold; */
+  width: 100%;
+}
+
+.socials a {
+  text-decoration: none;
+  font-size: 22px;
+  margin: 0 7px;
+  color: var(--mainBlue);
+}
+
+.socials a:hover {
+  color: blue;
+}

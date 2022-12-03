@@ -7,7 +7,12 @@
 }
 
 :root {
-  --lightBlue: #0000ff;
+  --lightBlue: #ceffff;
+  --mainWhite: #fffdee;
+  --shadowBlack: #cfcece;
+  --mainBlack: #222222;
+  --grey: #888787;
+  --gold: #c4b03c;
 }
 
 .container {
@@ -17,20 +22,42 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--lightBlue);
 }
 
 .head {
   font-family: "Niconne", cursive;
-  font-size: 40px;
+  font-size: 45px;
+  color: var(--gold);
 }
 
 .question {
   width: 80%;
-  height: 140px;
-  background-color: green;
+  max-width: 600px;
+  height: 70px;
+  overflow: hidden;
+  background-color: var(--mainWhite);
   margin: 10px 0;
-  padding: 15px;
+  padding: 0 15px;
   font-family: Arial, Helvetica, sans-serif;
+  border-radius: 7px;
+  box-shadow: 2px 3px 5px var(--shadowBlack);
+  transition: all 0.2s ease;
+}
+
+.open-question {
+  height: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .question {
+    padding: 0 30px;
+    height: 60px;
+  }
+
+  .open-question {
+    height: auto;
+  }
 }
 
 .qhead {
@@ -38,17 +65,50 @@
   justify-content: space-between;
   align-items: center;
   letter-spacing: 3px;
+  color: var(--mainBlack);
 }
 
 .qhead p {
   font-size: 17px;
   margin-right: 10px;
+  line-height: 25px;
+  padding: 10px 0;
+}
+
+@media screen and (min-width: 550px) {
+  .qhead p {
+    line-height: 40px;
+  }
 }
 
 .qhead .icon {
+  width: 23px;
+  height: 22px;
+  color: var(--gold);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 10px;
+  border: 2.5px solid var(--gold);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.hide-icon {
+  display: none;
+}
+
+.qhead .icon:hover {
+  transform: rotate(90deg);
 }
 
 hr {
-  margin: 10px 0;
+  border-width: 0.5px;
+}
+
+.qbody {
+  line-height: 22px;
+  color: var(--grey);
+  padding: 10px 0;
 }
